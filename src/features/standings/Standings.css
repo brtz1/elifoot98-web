@@ -1,0 +1,17 @@
+.standings-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.standings-table th,
+.standings-table td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.standings-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}

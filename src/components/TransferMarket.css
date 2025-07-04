@@ -1,0 +1,12 @@
+.transfer-market {
+  background: rgba(40,40,40,0.9);
+  padding: 16px;
+  border: 1px solid #444;
+  border-radius: 4px;
+}
+
+.transfer-market h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+}

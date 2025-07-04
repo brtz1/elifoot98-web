@@ -1,33 +1,79 @@
-import { create } from 'zustand';
-
-interface Player {
-  id: string;
-  name: string;
-  skill: number;
-  age: number;
-  value: number;
-  goals: number;
-  injured: boolean;
-}
+import { createSlice, configureStore, type PayloadAction } from '@reduxjs/toolkit';
 
 interface Team {
-  id: string;
+  id: number;
   name: string;
-  players: Player[];
-  budget: number;
+  played: number;
+  win: number;
+  draw: number;
+  loss: number;
+  gf: number;
+  ga: number;
   points: number;
 }
 
-interface GameState {
-  season: number;
-  teams: Team[];
-  currentTeamId: string | null;
-  advanceSeason: () => void;
+interface Fixture {
+  id: number;
+  round: number;
+  home: number;
+  away: number;
+  date: string;
+  result?: { home: number; away: number };
 }
 
-export const useGameStore = create<GameState>((set) => ({
-  season: 1,
+interface Player {
+  id: number;
+  name: string;
+  position: string;
+  age: number;
+  skill: number;
+}
+
+interface Finance {
+  balance: number;
+  income: number;
+  expenses: number;
+}
+
+interface GameState {
+  teams: Team[];
+  fixtures: Fixture[];
+  players: Player[];
+  finance: Finance;
+}
+
+const initialState: GameState = {
   teams: [],
-  currentTeamId: null,
-  advanceSeason: () => set(state => ({ season: state.season + 1 }))
-}));
+  fixtures: [],
+  players: [],
+  finance: { balance: 1000000, income: 0, expenses: 0 }
+};
+
+const gameSlice = createSlice({
+  name: 'game',
+  initialState,
+  reducers: {
+    setTeams(state: { teams: any; }, action: PayloadAction<Team[]>) {
+      state.teams = action.payload;
+    },
+    setFixtures(state: { fixtures: any; }, action: PayloadAction<Fixture[]>) {
+      state.fixtures = action.payload;
+    },
+    setPlayers(state: { players: any; }, action: PayloadAction<Player[]>) {
+      state.players = action.payload;
+    },
+    updateFinance(state: { finance: any; }, action: PayloadAction<Partial<Finance>>) {
+      Object.assign(state.finance, action.payload);
+    }
+  }
+});
+
+export const { setTeams, setFixtures, setPlayers, updateFinance } = gameSlice.actions;
+
+const store = configureStore({
+  reducer: { game: gameSlice.reducer }
+});
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+export default store;

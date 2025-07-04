@@ -1,12 +1,17 @@
-import { useGameStore } from './store/gameStore';
+import { SimulationControls } from '@/features/simulation/SimulationControls';
+import { StandingsTable } from '@/features/standings/StandingsTable';
+import { FixturesList } from '@/features/fixtures/FixturesList';
+import { RosterView } from '@/features/roster/RosterView';
+import { Finances } from '@/features/finances/Finances';
 
 export default function App() {
-  const season = useGameStore(state => state.season);
-
   return (
-    <div className="app-container">
-      <h1>Elifoot98 Reimagined</h1>
-      <p>Current season: {season}</p>
+    <div className="p-4 grid gap-6">
+      <SimulationControls />
+      <StandingsTable />
+      <FixturesList />
+      <RosterView />
+      <Finances />
     </div>
   );
 }

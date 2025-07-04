@@ -1,0 +1,41 @@
+/* Fixtures.css */
+
+.fixtures-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+
+.fixture-item {
+  display: grid;
+  grid-template-columns: 120px 1fr 100px;
+  align-items: center;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.fixture-date {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.fixture-teams {
+  font-weight: 500;
+  color: #333;
+}
+
+.fixture-score {
+  font-weight: bold;
+  color: #111;
+  text-align: right;
+}
+
+.fixture-pending {
+  color: #999;
+  font-style: italic;
+  text-align: right;
+}

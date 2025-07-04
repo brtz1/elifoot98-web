@@ -1,7 +1,7 @@
 {
   "name": "BRTZFoot25",
   "version": "0.0.1",
-  "description": "BRTZFoot25",
+  "description": "BRTZFoot25 Game - A modern React + TypeScript remake of the classic soccer manager game.",
   "homepage": "https://brtz1.github.io/elifoot98-web",
   "scripts": {
     "dev": "vite",

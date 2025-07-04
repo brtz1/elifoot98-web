@@ -20,6 +20,7 @@
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 }
+```css
 .app-container {
   display: flex;
   height: 100vh;
@@ -38,6 +39,7 @@
   box-shadow: inset 4px 0 8px rgba(0,0,0,0.5);
   border-top-left-radius: 8px;
 }
+```css
 .app-container {
   display: flex;
   height: 100vh;

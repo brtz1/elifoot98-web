@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import {
   simulateAllFixtures,
   simulateFixture
-} from '@/services/league';
+} from '@/services/league/index';
 
 /**
  * Hook exposing simulation actions.

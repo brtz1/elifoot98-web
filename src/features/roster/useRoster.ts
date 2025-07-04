@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { RosterEntry } from '@/models/RosterEntry';
-import { getRoster, subscribeToUpdates } from '@/services/league';
+import { getRoster, subscribeToUpdates } from '@/services/league/index';
 
 export function useRoster(): RosterEntry[] {
   const [rosters, setRosters] = useState<RosterEntry[]>([]);

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { StandingsEntry } from '@/models/StandingsEntry';
-import { getStandings, subscribeToUpdates } from '@/services/league';
+import { getStandings, subscribeToUpdates } from '@/services/league/index';
 
 /**
  * Hook to fetch and update standings on league changes.

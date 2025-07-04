@@ -1,6 +1,5 @@
-import React from 'react';
 import { useFixtures } from './useFixtures';
-import './Fixtures.css';
+import './Fixture.css';
 
 /**
  * Renders a list of upcoming and completed fixtures.

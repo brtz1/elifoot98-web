@@ -1,18 +1,40 @@
 {
-  "name": "elifoot-web",
+  "name": "elifoot98-clone",
   "version": "0.1.0",
+  "private": true,
+  "homepage": "https://brtz1.github.io/elifoot98-web",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "@reduxjs/toolkit": "^2.8.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.6.3"
   },
   "devDependencies": {
-    "vite": "^7.0.0",
-    "typescript": "^5.0.0",
-    "@vitejs/plugin-react": "^3.0.0"
+    "@types/node": "^24.0.10",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "gh-pages": "^6.3.0",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.1"
+  },
+  "description": "## Setup ```bash npm install npm run dev",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brtz1/elifoot98-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brtz1/elifoot98-web/issues"
   }
 }

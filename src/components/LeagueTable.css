@@ -1,0 +1,24 @@
+.league-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(30,30,30,0.9);
+  box-shadow: 0 0 8px rgba(0,0,0,0.7);
+}
+
+.league-table th,
+.league-table td {
+  padding: 8px 12px;
+  text-align: center;
+  border: 1px solid #333;
+}
+
+.league-table thead th {
+  background: #2e2e2e;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.league-table tbody tr:hover {
+  background: rgba(255,255,255,0.1);
+}

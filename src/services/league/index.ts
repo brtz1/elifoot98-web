@@ -7,7 +7,7 @@ import type { RosterEntry } from '@/models/RosterEntry';
 // Initialize league (pass real teams array when ready)
 // import { teams } from '@/data/teams';
 // const league = new League(teams);
-const league = new League([]);
+const league = new League('default-league', 'Default League');
 
 // —— Update emitter for subscriptions ——
 type UpdateListener = () => void;
@@ -35,7 +35,7 @@ function emitUpdate() {
  * Get all fixtures (scheduled & completed).
  */
 export function getFixtures(): Fixture[] {
-  return league.fixtures;
+  return league.fixtures ?? [];
 }
 
 /**
@@ -56,7 +56,7 @@ export function getStandings(): StandingsEntry[] {
  * Get roster entries (team + players) for all teams.
  */
 export function getRoster(): RosterEntry[] {
-  return league.teams.map(team => ({
+  return league.teams.map((team: { id: string | number; }) => ({
     team,
     players: league.rosters[team.id] || []
   }));
@@ -75,8 +75,12 @@ export function simulateAllFixtures(): void {
  * Returns the updated Fixture or undefined if not found.
  */
 export function simulateFixture(id: string): Fixture | undefined {
-  const fx = league.fixtures.find(f => f.id === id);
-  const result = fx ? league.simulateGame(fx) : undefined;
+  const fx = league.fixtures ? league.fixtures.find(f => f.id === id) : undefined;
+  if (fx) {
+    league.simulateGame(fx);
+    emitUpdate();
+    return fx;
+  }
   emitUpdate();
-  return result;
+  return undefined;
 }

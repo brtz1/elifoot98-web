@@ -1,0 +1,28 @@
+.match-simulation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.simulate-btn {
+  font-family: 'Press Start 2P', monospace;
+  background: #3a3a3a;
+  border: 2px solid #666;
+  padding: 12px 24px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.simulate-btn:hover {
+  background: #4a4a4a;
+}
+
+.result-feed {
+  margin-top: 20px;
+  width: 100%;
+  background: rgba(20,20,20,0.9);
+  padding: 12px;
+  border: 1px solid #333;
+  max-height: 300px;
+  overflow-y: auto;
+}

@@ -1,10 +1,20 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
+    // ensure at least ES2015 so Object.assign is included:
+    "target": "ES2015",
+
+    // explicitly pull in ES2015 globals:
+    "lib": [
+      "ES2015",
+      "DOM"
+    ],
+
+    // other existing options…
     "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "node",
     "strict": true,
-    "baseUrl": ".",
-    "paths": { "@/*": ["src/*"] }
-  }
+    "esModuleInterop": true
+  },
+  "include": ["src"]
 }

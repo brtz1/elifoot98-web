@@ -3,7 +3,7 @@
   height: 100vh;
   /* layered gradient for depth */
   background: linear-gradient(135deg, rgba(11,11,11,0.95) 0%, rgba(30,30,30,0.95) 100%),
-              url('/assets/pixel-pattern.png') repeat;
+              url('%BASE_URL%assets/pixel-pattern.png') repeat;
   backdrop-filter: blur(4px);
 }
 
@@ -20,7 +20,7 @@
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
 }
-```css
+
 .app-container {
   display: flex;
   height: 100vh;
@@ -39,7 +39,7 @@
   box-shadow: inset 4px 0 8px rgba(0,0,0,0.5);
   border-top-left-radius: 8px;
 }
-```css
+
 .app-container {
   display: flex;
   height: 100vh;

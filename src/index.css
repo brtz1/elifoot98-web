@@ -4,6 +4,6 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Press Start 2P', monospace;
-  background: #0a0a0a url('/assets/pixel-pattern.png') repeat;
+  background: #0a0a0a url('%BASE_URL%assets/pixel-pattern.png') repeat;
   color: #e0e0e0;
 }

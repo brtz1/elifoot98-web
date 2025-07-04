@@ -2,19 +2,23 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navigation.css';
 
+import React from 'react';
+
+const base = import.meta.env.BASE_URL;
+
 const Navigation: React.FC = () => (
   <nav className="sidebar">
     <div className="logo-container">
-      <img src="/assets/logo.png" alt="Elifoot98 Logo" className="logo" />
+      <img src={`${base}assets/logo.png`} alt="Elifoot98 Logo" className="logo" />
       <h2>Elifoot98</h2>
     </div>
     <ul>
-      <li><NavLink to="/standings" className={({ isActive }) => isActive ? "active" : undefined}>Standings</NavLink></li>
-      <li><NavLink to="/fixtures" className={({ isActive }) => isActive ? "active" : undefined}>Fixtures</NavLink></li>
-      <li><NavLink to="/roster" className={({ isActive }) => isActive ? "active" : undefined}>Roster</NavLink></li>
-      <li><NavLink to="/simulate" className={({ isActive }) => isActive ? "active" : undefined}>Simulate</NavLink></li>
-      <li><NavLink to="/transfers" className={({ isActive }) => isActive ? "active" : undefined}>Transfers</NavLink></li>
-      <li><NavLink to="/finances" className={({ isActive }) => isActive ? "active" : undefined}>Finances</NavLink></li>
+      <li><NavLink to="/standings" activeClassName="active">Standings</NavLink></li>
+      <li><NavLink to="/fixtures" activeClassName="active">Fixtures</NavLink></li>
+      <li><NavLink to="/roster" activeClassName="active">Roster</NavLink></li>
+      <li><NavLink to="/simulate" activeClassName="active">Simulate</NavLink></li>
+      <li><NavLink to="/transfers" activeClassName="active">Transfers</NavLink></li>
+      <li><NavLink to="/finances" activeClassName="active">Finances</NavLink></li>
     </ul>
   </nav>
 );

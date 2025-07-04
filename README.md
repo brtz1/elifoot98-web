@@ -1,6 +1,9 @@
-# eLiFoot Web Game
+# BRTZFoot25
 
-## Setup
-```bash
-npm install
-npm run dev
+A modern React + TypeScript remake of the classic soccer manager game.
+
+## Overview
+
+BRTZFoot25 lets you manage teams, simulate matches, handle transfers, and track club finances.
+
+<!-- …rest of your README… -->

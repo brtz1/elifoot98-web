@@ -1,70 +1,31 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './Navigation.css';
 
-const base = import.meta.env.BASE_URL;
+const Navigation: React.FC = () => {
+  const base = import.meta.env.BASE_URL;
 
-const Navigation: React.FC = () => (
-  <nav className="sidebar">
-    <div className="logo-container">
-      <img
-        src={`${base}assets/logo.png`}
-        alt="Elifoot98 Logo"
-        className="logo"
-      />
-      <h2>Elifoot98</h2>
-    </div>
-    <ul>
-      <li>
-        <NavLink
-          to="/standings"
-          className={({ isActive }) => (isActive ? 'active' : '')}
-        >
-          Standings
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/fixtures"
-          className={({ isActive }) => (isActive ? 'active' : '')}
-        >
-          Fixtures
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/roster"
-          className={({ isActive }) => (isActive ? 'active' : '')}
-        >
-          Roster
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/simulate"
-          className={({ isActive }) => (isActive ? 'active' : '')}
-        >
-          Simulate
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/transfers"
-          className={({ isActive }) => (isActive ? 'active' : '')}
-        >
-          Transfers
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to="/finances"
-          className={({ isActive }) => (isActive ? 'active' : '')}
-        >
-          Finances
-        </NavLink>
-      </li>
-    </ul>
-  </nav>
-);
+  return (
+    <nav className="navigation">
+      <NavLink to="/" className="logo">
+        <img
+          src={`${base}logo.png`}
+          alt="BRTZFoot25 logo"
+          width={32}
+          height={32}
+        />
+        <span>BRTZFoot25</span>
+      </NavLink>
+
+      <div className="links">
+        <NavLink to="/standings">Standings</NavLink>
+        <NavLink to="/fixtures">Fixtures</NavLink>
+        <NavLink to="/roster">Roster</NavLink>
+        <NavLink to="/match">Match</NavLink>
+        <NavLink to="/transfers">Transfers</NavLink>
+        <NavLink to="/finance">Finances</NavLink>
+      </div>
+    </nav>
+  );
+};
 
 export default Navigation;
